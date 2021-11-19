@@ -3,10 +3,16 @@ define(
 	'JOB.recaptcha.recaptcha'
 ,   [
 		'JOB.recaptcha.recaptcha.View',
+		'JOB.recaptcha.register.View',
+		'JOB.recaptcha.guest.View',
+		'JOB.recaptcha.callback.View',
 		'JOB.recaptcha.getip.View'
 	]
 ,   function (
-		recaptchaView,
+		recaptchaNoGuestView,
+		recaptchaRegisterView,
+		recaptchaGuestView,
+		recaptchaCallbackView,
 		getipView
 	)
 {
@@ -22,16 +28,42 @@ define(
 			
 			/** @type {LayoutComponent} */
 			var loginRegister = container.getComponent('LoginRegisterPage');
-			var recaptchaOn = false;
 			
 			if(loginRegister)
 			{
+				var recaptchaOn = true;
+				console.log('ENVIRONMENT object\n' + container.getComponent('ENVIRONMENT'));
+				var isRegistrationOptionalTF = container.getComponent('ENVIRONMENT').siteSettings.registration.registrationoptional;
+				var isRegistrationOptional = (isRegistrationOptionalTF === "T");
 				loginRegister.addChildView('Register.CustomFields', function () {
 					return new getipView({loginRegister: loginRegister});
 				});
-				if (recaptchaOn) {
+				if (isRegistrationOptional) {
+					//Guest Shopper is ON
+					loginRegister.addChildView('CheckoutAsGuest.CustomFields', function () {
+						return new getipView({loginRegister: loginRegister});
+					});
+					if (recaptchaOn) {
+						var layout = container.getComponent('Layout');
+						//reCAPTCHA is ON
+						//Explicitly render the reCAPTCHA widget in Guest Checkout Form
+						loginRegister.addChildView('CheckoutAsGuest.CustomFields', function () {
+							return new recaptchaGuestView({loginRegister: loginRegister});
+						});
+						//Explicitly render the reCAPTCHA widget in Register Form
+						loginRegister.addChildView('Register.CustomFields', function () {
+							return new recaptchaRegisterView({loginRegister: loginRegister});
+						});
+						//Add View for the reCAPTCHA Callback Function
+						layout.addChildView('Header', function () {
+							return new recaptchaCallbackView({loginRegister: loginRegister});
+						})
+					}
+				}
+				else if (recaptchaOn) {
 					loginRegister.addChildView('Register.CustomFields', function () {
-						return new recaptchaView({loginRegister: loginRegister});
+						//Automatically render the reCAPTCHA widget
+						return new recaptchaNoGuestView({loginRegister: loginRegister});
 					});
 				}
 			}
