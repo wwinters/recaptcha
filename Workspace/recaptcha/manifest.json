@@ -32,7 +32,8 @@
         "application": {
             "checkout": {
                 "files": [
-                    "Modules/recaptcha/Templates/job_recaptcha_recaptcha.tpl"
+                    "Modules/recaptcha/Templates/job_recaptcha_recaptcha.tpl",
+                    "Modules/recaptcha/Templates/job_recaptcha_getip.tpl"
                 ]
             }
         }
@@ -47,7 +48,8 @@
                     "Modules/recaptcha/JavaScript/JOB.recaptcha.recaptcha.js",
                     "Modules/recaptcha/JavaScript/recaptcha.View.js",
                     "Modules/recaptcha/JavaScript/JOB.recaptcha.recaptcha.Model.js",
-                    "Modules/recaptcha/JavaScript/JOB.recaptcha.recaptcha.SS2Model.js"
+                    "Modules/recaptcha/JavaScript/JOB.recaptcha.recaptcha.SS2Model.js",
+                    "Modules/recaptcha/JavaScript/getip.View.js"
                 ]
             }
         }
