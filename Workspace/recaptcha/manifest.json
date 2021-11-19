@@ -2,14 +2,15 @@
     "name": "recaptcha",
     "fantasyName": "recaptcha",
     "vendor": "JOB",
+    "version": "0.0.3",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=21.2.0",
         "SCS": ">=21.2.0"
     },
-    "version": "0.0.2",
     "description": "reCAPTCHA",
+    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -61,6 +62,7 @@
             "Modules/recaptcha/SuiteScript/recaptcha.ServiceController.js"
         ]
     },
+    "local_folder": "Workspace\\recaptcha",
     "suitescript2": {
         "files": []
     }
