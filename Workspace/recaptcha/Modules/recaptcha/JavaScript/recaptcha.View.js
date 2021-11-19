@@ -60,11 +60,7 @@ define('JOB.recaptcha.recaptcha.View'
 		//@method getContext @return JOB.recaptcha.recaptcha.View.Context
 	,	getContext: function getContext()
 		{
-			//@class JOB.recaptcha.recaptcha.View.Context
-			this.message = this.message || 'Hello World!!'
-			return {
-				message: this.message
-			};
+
 		}
 	});
 });
