@@ -22,16 +22,18 @@ define(
 			
 			/** @type {LayoutComponent} */
 			var loginRegister = container.getComponent('LoginRegisterPage');
+			var recaptchaOn = false;
 			
 			if(loginRegister)
 			{
 				loginRegister.addChildView('Register.CustomFields', function () {
 					return new getipView({loginRegister: loginRegister});
-				})
-				loginRegister.addChildView('Register.CustomFields', function() {
-					return new recaptchaView({ loginRegister: loginRegister });
 				});
-
+				if (recaptchaOn) {
+					loginRegister.addChildView('Register.CustomFields', function () {
+						return new recaptchaView({loginRegister: loginRegister});
+					});
+				}
 			}
 
 		}

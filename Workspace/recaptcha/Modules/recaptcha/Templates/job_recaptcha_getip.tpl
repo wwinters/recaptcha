@@ -1,7 +1,7 @@
-<input type="hidden" name="custentity_ipAddress" id="custentity_ipAddress">
+<input type="hidden" name="custentity_ip_address" id="custentity_ip_address">
 <script type="application/javascript">
     function getIP(json) {
-        document.getElementById("custentity_ipAddress").value = json.ip;
+        document.getElementById("custentity_ip_address").value = json.ip;
         //document.write("My public IP address is: ", json.ip);
     }
 </script>
