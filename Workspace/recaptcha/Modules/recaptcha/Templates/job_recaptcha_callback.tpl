@@ -8,11 +8,11 @@
         // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
         // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
         grecaptcha.render('guestWidget', {
-            'sitekey' : {{sitekey}},
+            'sitekey' : "{{sitekey}}",
             'callback' : verifyCallback
         });
         grecaptcha.render(document.getElementById('registerWidget'), {
-            'sitekey' : {{sitekey}},
+            'sitekey' : "{{sitekey}}",
             'callback' : verifyCallback
         });
     };
