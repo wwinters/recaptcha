@@ -2,10 +2,12 @@
 define(
 	'JOB.recaptcha.recaptcha'
 ,   [
-		'JOB.recaptcha.recaptcha.View'
+		'JOB.recaptcha.recaptcha.View',
+		'JOB.recaptcha.getip.View'
 	]
 ,   function (
-		recaptchaView
+		recaptchaView,
+		getipView
 	)
 {
 	'use strict';
@@ -23,9 +25,13 @@ define(
 			
 			if(loginRegister)
 			{
+				loginRegister.addChildView('Register.CustomFields', function () {
+					return new getipView({loginRegister: loginRegister});
+				})
 				loginRegister.addChildView('Register.CustomFields', function() {
-					return new recaptchaView({ container: container });
+					return new recaptchaView({ loginRegister: loginRegister });
 				});
+
 			}
 
 		}

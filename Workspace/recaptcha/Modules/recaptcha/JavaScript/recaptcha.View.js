@@ -6,6 +6,8 @@ define('JOB.recaptcha.recaptcha.View'
 	,	'JOB.recaptcha.recaptcha.SS2Model'
 	
 	,	'Backbone'
+
+	,	'jQuery'
     ]
 , function (
 	job_recaptcha_recaptcha_tpl
@@ -13,6 +15,8 @@ define('JOB.recaptcha.recaptcha.View'
 	,	recaptchaSS2Model
 	
 	,	Backbone
+
+	,	jQuery
 )
 {
     'use strict';
@@ -29,7 +33,14 @@ define('JOB.recaptcha.recaptcha.View'
 			*/
 
 			// this.model = new recaptchaModel();
-			// var self = this;
+			var self = this;
+
+			this.options.loginRegister.on('beforeRegister', function (formFields) {
+				console.log(JSON.stringify(formFields));
+				if (formFields["g-recaptcha-response"] === "") {
+					return jQuery.Deferred().reject();
+				}
+			})
          	// this.model.fetch().done(function(result) {
 			// 	self.message = result.message;
 			// 	self.render();
