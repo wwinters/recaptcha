@@ -2,15 +2,14 @@
     "name": "recaptcha",
     "fantasyName": "recaptcha",
     "vendor": "JOB",
-    "version": "0.0.4",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=21.2.0",
         "SCS": ">=21.2.0"
     },
+    "version": "0.0.4",
     "description": "reCAPTCHA",
-    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -34,7 +33,10 @@
             "checkout": {
                 "files": [
                     "Modules/recaptcha/Templates/job_recaptcha_recaptcha.tpl",
-                    "Modules/recaptcha/Templates/job_recaptcha_getip.tpl"
+                    "Modules/recaptcha/Templates/job_recaptcha_getip.tpl",
+                    "Modules/recaptcha/Templates/job_recaptcha_callback.tpl",
+                    "Modules/recaptcha/Templates/job_recaptcha_guest.tpl",
+                    "Modules/recaptcha/Templates/job_recaptcha_register.tpl"
                 ]
             }
         }
@@ -50,7 +52,10 @@
                     "Modules/recaptcha/JavaScript/recaptcha.View.js",
                     "Modules/recaptcha/JavaScript/JOB.recaptcha.recaptcha.Model.js",
                     "Modules/recaptcha/JavaScript/JOB.recaptcha.recaptcha.SS2Model.js",
-                    "Modules/recaptcha/JavaScript/getip.View.js"
+                    "Modules/recaptcha/JavaScript/getip.View.js",
+                    "Modules/recaptcha/JavaScript/callback.View.js",
+                    "Modules/recaptcha/JavaScript/guest.View.js",
+                    "Modules/recaptcha/JavaScript/register.View.js"
                 ]
             }
         }
@@ -62,7 +67,6 @@
             "Modules/recaptcha/SuiteScript/recaptcha.ServiceController.js"
         ]
     },
-    "local_folder": "Workspace\\recaptcha",
     "suitescript2": {
         "files": []
     }

@@ -32,8 +32,8 @@ define(
 			if(loginRegister)
 			{
 				var recaptchaOn = true;
-				console.log('ENVIRONMENT object\n' + container.getComponent('ENVIRONMENT'));
-				var isRegistrationOptionalTF = container.getComponent('ENVIRONMENT').siteSettings.registration.registrationoptional;
+				console.log('ENVIRONMENT object\n' + container.getComponent('Environment'));
+				var isRegistrationOptionalTF = container.getComponent('Environment').siteSettings.registration.registrationoptional;
 				var isRegistrationOptional = (isRegistrationOptionalTF === "T");
 				loginRegister.addChildView('Register.CustomFields', function () {
 					return new getipView({loginRegister: loginRegister});
