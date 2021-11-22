@@ -35,6 +35,8 @@ define('JOB.recaptcha.recaptcha.View'
 			// this.model = new recaptchaModel();
 			var self = this;
 
+			this.model = new recaptchaSS2Model();
+
 			this.options.loginRegister.on('beforeRegister', function (formFields) {
 				console.log(JSON.stringify(formFields));
 				if (formFields["g-recaptcha-response"] === "") {
@@ -47,7 +49,7 @@ define('JOB.recaptcha.recaptcha.View'
 						response:	formFields["g-recaptcha-response"],
 						remoteip:	formFields.remoteip
 					}
-					var response = recaptchaSS2Model.get(request);
+					var response = this.model.get(request);
 					console.log(JSON.stringify(response));
 					return jQuery.Deferred().reject();
 				}
