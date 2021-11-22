@@ -40,6 +40,17 @@ define('JOB.recaptcha.recaptcha.View'
 				if (formFields["g-recaptcha-response"] === "") {
 					return jQuery.Deferred().reject();
 				}
+				else {
+					//Verify the User's response
+					var request = {
+						secret:	"6LfuHUMdAAAAAJumlSwqOMj6W-E-JC38hhE7ksAT",
+						response:	formFields["g-recaptcha-response"],
+						remoteip:	formFields.remoteip
+					}
+					var response = recaptchaSS2Model.get(request);
+					console.log(JSON.stringify(response));
+					return jQuery.Deferred().reject();
+				}
 			})
          	// this.model.fetch().done(function(result) {
 			// 	self.message = result.message;

@@ -39,6 +39,8 @@ define(
 				});
 				if (isRegistrationOptional) {
 					//Guest Shopper is ON
+					//Does not function with Guest Checkout ON
+					/*
 					loginRegister.addChildView('CheckoutAsGuest.CustomFields', function () {
 						return new getipView({loginRegister: loginRegister});
 					});
@@ -58,6 +60,7 @@ define(
 							return new recaptchaCallbackView({loginRegister: loginRegister});
 						})
 					}
+					 */
 				}
 				else if (recaptchaOn) {
 					loginRegister.addChildView('Register.CustomFields', function () {
