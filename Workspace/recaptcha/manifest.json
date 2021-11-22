@@ -19,9 +19,7 @@
             "files": []
         },
         "services": {
-            "files": [
-                "services/recaptcha.Service.ss"
-            ]
+            "files": []
         }
     },
     "configuration": {
