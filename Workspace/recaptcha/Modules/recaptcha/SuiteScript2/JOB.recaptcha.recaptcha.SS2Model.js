@@ -1,5 +1,5 @@
 /**
- * @NApiVersion 2.0
+ * @NApiVersion 2.x
  * @ModuleScope TargetAccount
  */
 define([

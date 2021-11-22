@@ -1,11 +1,11 @@
 /**
-* @NApiVersion 2.0
+* @NApiVersion 2.x
 * @NModuleScope Public
 */
 define([
     './JOB.recaptcha.recaptcha.SS2Model'
     ], function (RecaptchaModel) {
-    "use strict";
+    'use strict';
 
     function service (context) {
         var response = {};
