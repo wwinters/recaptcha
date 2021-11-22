@@ -5,7 +5,7 @@ define("JOB.recaptcha.recaptcha.SS2Model", ["SCModel", "Utils"], function(
     SCModelModule,
     Utils
 ) {
-    "use strict";
+    'use strict';
 
     var SCModel = SCModelModule.SCModel;
 
