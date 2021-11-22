@@ -1,5 +1,5 @@
 /**
-* @NApiVersion 2.x
+* @NApiVersion 2.0
 * @NModuleScope Public
 */
 define([
