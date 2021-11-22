@@ -2,14 +2,15 @@
     "name": "recaptcha",
     "fantasyName": "recaptcha",
     "vendor": "JOB",
+    "version": "0.0.5",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=21.2.0",
         "SCS": ">=21.2.0"
     },
-    "version": "0.0.4",
     "description": "reCAPTCHA",
+    "skins": [],
     "assets": {
         "img": {
             "files": []
@@ -60,14 +61,11 @@
             }
         }
     },
-    "ssp-libraries": {
-        "entry_point": "Modules/recaptcha/SuiteScript/JOB.recaptcha.recaptcha.js",
-        "files": [
-            "Modules/recaptcha/SuiteScript/JOB.recaptcha.recaptcha.js",
-            "Modules/recaptcha/SuiteScript/recaptcha.ServiceController.js"
-        ]
-    },
+    "local_folder": "Workspace\\recaptcha",
     "suitescript2": {
-        "files": []
+        "files": [
+            "Modules/recaptcha/SuiteScript2/JOB.recaptcha.recaptcha.SS2Model.js",
+            "Modules/recaptcha/SuiteScript2/recaptcha.Service.ss"
+        ]
     }
 }
