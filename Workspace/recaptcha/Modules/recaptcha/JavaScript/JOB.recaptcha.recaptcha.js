@@ -46,7 +46,7 @@ define(
 						var layout = container.getComponent('Layout');
 						//reCAPTCHA is ON
 						//Explicitly render the reCAPTCHA widget in Guest Checkout Form
-						loginRegister.addChildView('CheckoutAsGuest.CustomFields', function () {
+						loginRegister.addChildView('CheckoutAsGuest', function () {
 							return new recaptchaGuestView({loginRegister: loginRegister});
 						});
 						//Explicitly render the reCAPTCHA widget in Register Form
