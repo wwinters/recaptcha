@@ -25,7 +25,16 @@ define([
             });
 
             return JSON.stringify(response);
+        },
+
+        put: function (request) {
+
+        },
+
+        delete: function (request) {
+
         }
+
     }
 
     return RecaptchaModel
