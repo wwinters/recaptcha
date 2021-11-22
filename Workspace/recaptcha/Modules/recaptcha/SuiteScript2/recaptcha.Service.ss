@@ -7,17 +7,34 @@ define([
     ], function (RecaptchaModel) {
     "use strict";
 
-    function service (ctx) {
+    function service (context) {
         var response = {};
 
-        switch (ctx.request.method) {
+        switch (context.request.method) {
             case 'GET':
-                response = RecaptchaModel
+                response = RecaptchaModel.get(context.request);
+                break;
+            case 'POST':
+                response = RecaptchaModel.post(context.request);
+                break;
+            case 'PUT':
+                response = RecaptchaModel.put(context.request);
+                break;
+            case 'DELETE':
+                response = RecaptchaModel.delete(context.request);
+                break;
+            default:
+                response = {
+                    type: 'error',
+                    message: 'Method not supported: ' + context.request.method
+                };
         }
+
+        context.request.write(JSON.stringify(response));
+
     }
     return {
-        service: function (ctx) {
-            ctx.response.write(JSON.stringify({message: 'Hello SS2 World!'}));
+        service: service
         }
-    };
-});
+
+})
